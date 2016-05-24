@@ -6,17 +6,19 @@ namespace ExtremeFakeItTillYouMakeIt
 {
     public class Bowling
     {
-        private readonly Frame frame = new Frame();
+        private readonly List<Frame> frames = new List<Frame>();
 
         public void Roll(params int[] rolls)
         {
+            Frame frame = new Frame(1);
             frame.AddRoll(rolls[0]);
             frame.AddRoll(rolls[1]);
+            frames.Add(frame);
         }
 
         public override string ToString()
         {
-            var expected = frame +"\r\n"+ @"
+            var expected = frames.JoinStringsWith(f => "" + f, "\r\n") +"\r\n"+ @"
 2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55

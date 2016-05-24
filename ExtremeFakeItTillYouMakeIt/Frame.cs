@@ -6,9 +6,14 @@ namespace ExtremeFakeItTillYouMakeIt
 {
     public class Frame
     {
-        private int frameNumber = 1;
+        private int frameNumber ;
         private int previousScore = 0;
         private  List<int> Rolls = new List<int>();
+
+        public Frame(int frameNumber)
+        {
+            this.frameNumber = frameNumber;
+        }
 
         private  int TotalScore
         {
