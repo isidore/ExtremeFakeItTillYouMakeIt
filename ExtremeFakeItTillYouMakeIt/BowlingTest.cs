@@ -21,7 +21,7 @@ namespace ExtremeFakeItTillYouMakeIt
 7) 6, 2 [8] = 107
 8) 5, 4 [9] = 116
 9) 7, 3 [20] = 136
-10) 10, 6, 3 [19] = 155";                ;
+10) 10, 6, 3 [19] = 155".TrimStart();                ;
             Assert.AreEqual(expected, game.ToString());
         }
     }
