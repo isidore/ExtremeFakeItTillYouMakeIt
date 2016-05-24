@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ApprovalUtilities.Utilities;
 
 namespace ExtremeFakeItTillYouMakeIt
@@ -32,7 +33,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public static int FrameScore
         {
-            get { return 3 +5 ; }
+            get { return Rolls.Sum(); }
         }
 
         private static string GetRollsToString()
