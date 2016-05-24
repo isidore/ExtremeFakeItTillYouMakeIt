@@ -12,7 +12,8 @@ namespace ExtremeFakeItTillYouMakeIt
         {
             var previousScore = 0;
             var rollIndex = 0;
-            for (int frameNumber = 1; frameNumber <= 2; frameNumber++)
+            // 3) 3, 7 [18] = 46
+            for (int frameNumber = 1; frameNumber <= 3; frameNumber++)
             {
 
 
@@ -26,6 +27,10 @@ namespace ExtremeFakeItTillYouMakeIt
                 else
                 {
                     frame.AddRoll(rolls[rollIndex++]);
+                    if (frame.IsSpare)
+                    {
+                        frame.AddRoll(rolls[rollIndex]);  
+                    }
                 }
                 frames.Add(frame);
                 previousScore = frame.TotalScore;
@@ -36,7 +41,6 @@ namespace ExtremeFakeItTillYouMakeIt
         public override string ToString()
         {
             var expected = frames.JoinStringsWith(f => "" + f, "\r\n") +"\r\n"+ @"
-3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
 5) 10 [26] = 81
 6) 10 [18] = 99

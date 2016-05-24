@@ -47,6 +47,7 @@ namespace ExtremeFakeItTillYouMakeIt
         }
 
         public bool IsStrike { get { return Rolls.FirstOrDefault() == 10; }}
+        public bool IsSpare { get { return Rolls.Take(2).Sum() == 10; } }
 
         public void AddRoll(int roll)
         {
