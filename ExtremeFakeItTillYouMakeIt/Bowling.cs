@@ -12,31 +12,25 @@ namespace ExtremeFakeItTillYouMakeIt
         {
             var previousScore = 0;
             var rollIndex = 0;
-            Frame frame = new Frame(1, 0);
-            frame.AddRoll(rolls[rollIndex++]);
-            if (frame.IsStrike)
+            for (int frameNumber = 1; frameNumber <= 2; frameNumber++)
             {
-                frame.AddRoll(rolls[rollIndex]);
-                frame.AddRoll(rolls[rollIndex + 1]);
-            }
-            else
-            {
+
+
+                Frame frame = new Frame(frameNumber, previousScore);
                 frame.AddRoll(rolls[rollIndex++]);
+                if (frame.IsStrike)
+                {
+                    frame.AddRoll(rolls[rollIndex]);
+                    frame.AddRoll(rolls[rollIndex + 1]);
+                }
+                else
+                {
+                    frame.AddRoll(rolls[rollIndex++]);
+                }
+                frames.Add(frame);
+                previousScore = frame.TotalScore;
             }
-            frames.Add(frame);
-             previousScore = frame.TotalScore;
-            frame = new Frame(2, previousScore);
-            frame.AddRoll(rolls[rollIndex++]);
-            if (frame.IsStrike)
-            {
-                frame.AddRoll(rolls[rollIndex]);
-                frame.AddRoll(rolls[rollIndex+1]);
-            }
-            else
-            {
-                frame.AddRoll(rolls[rollIndex++]);
-            }
-            frames.Add(frame);
+           
         }
 
         public override string ToString()
