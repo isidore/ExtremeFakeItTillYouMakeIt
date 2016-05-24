@@ -24,7 +24,7 @@ namespace ExtremeFakeItTillYouMakeIt
             }
             frames.Add(frame);
             //2) 10 [20] = 28
-             previousScore = 8;
+             previousScore = frame.TotalScore;
             frame = new Frame(2, previousScore);
             frame.AddRoll(rolls[2]);
             if (frame.IsStrike)

@@ -16,7 +16,7 @@ namespace ExtremeFakeItTillYouMakeIt
             this.previousScore = previousScore;
         }
 
-        private  int TotalScore
+        public  int TotalScore
         {
             get
             {
