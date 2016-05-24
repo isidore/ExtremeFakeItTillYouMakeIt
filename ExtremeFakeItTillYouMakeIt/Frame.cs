@@ -48,7 +48,8 @@ namespace ExtremeFakeItTillYouMakeIt
                 return "{0}".FormatWith(Rolls[0]);
                 
             }
-            return "{0}, {1}".FormatWith(Rolls[0], Rolls[1]);
+             return Rolls.Take(2).JoinStringsWith(n => "" + n, ", ");
+  
         }
 
         public bool IsStrike { get { return Rolls.FirstOrDefault() == 10; }}
