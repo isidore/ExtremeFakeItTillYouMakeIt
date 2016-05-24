@@ -28,7 +28,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         private static string GetRollsToString()
         {
-            return "3, 5";
+            return "{0}, {1}".FormatWith(3,5);
         }
     }
 }
