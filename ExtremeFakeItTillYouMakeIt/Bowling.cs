@@ -7,7 +7,8 @@ namespace ExtremeFakeItTillYouMakeIt
     public class Bowling
     {
         private int frameNumber = 1;
-        private static List<int> Rolls = new List<int>();
+        int previousScore = 0;
+        private  List<int> Rolls = new List<int>();
 
         public void Roll(params int[] rolls)
         {
@@ -31,17 +32,20 @@ namespace ExtremeFakeItTillYouMakeIt
             return expected.FormatWith(frameNumber, GetRollsToString(), FrameScore, TotalScore);
         }
 
-        private static int TotalScore
+        private  int TotalScore
         {
-            get { return FrameScore + 0; }
+            get
+            {
+                return FrameScore + previousScore;
+            }
         }
 
-        public static int FrameScore
+        public  int FrameScore
         {
             get { return Rolls.Sum(); }
         }
 
-        private static string GetRollsToString()
+        private  string GetRollsToString()
         {
             return "{0}, {1}".FormatWith(Rolls[0], Rolls[1]);
         }
