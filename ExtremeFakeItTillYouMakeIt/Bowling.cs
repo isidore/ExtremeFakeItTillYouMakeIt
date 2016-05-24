@@ -23,7 +23,12 @@ namespace ExtremeFakeItTillYouMakeIt
 8) 5, 4 [9] = 116
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();
-            return expected.FormatWith(frameNumber, "3, 5");
+            return expected.FormatWith(frameNumber, GetRollsToString());
+        }
+
+        private static string GetRollsToString()
+        {
+            return "3, 5";
         }
     }
 }
