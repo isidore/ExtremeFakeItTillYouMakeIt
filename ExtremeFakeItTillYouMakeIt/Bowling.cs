@@ -39,8 +39,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public override string ToString()
         {
-            var expected = frames.JoinStringsWith(f => "" + f, "\r\n");
-            return expected;
+            return frames.JoinStringsWith(f => "" + f, "\r\n");
         }
     }
 }
