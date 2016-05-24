@@ -18,7 +18,7 @@ namespace ExtremeFakeItTillYouMakeIt
         public override string ToString()
         {
             var expected = @"
-{0}) {1} [{2}] = 8
+{0}) {1} [{2}] = {3}
 2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
@@ -28,7 +28,7 @@ namespace ExtremeFakeItTillYouMakeIt
 8) 5, 4 [9] = 116
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();
-            return expected.FormatWith(frameNumber, GetRollsToString(), FrameScore);
+            return expected.FormatWith(frameNumber, GetRollsToString(), FrameScore, 8);
         }
 
         public static int FrameScore
