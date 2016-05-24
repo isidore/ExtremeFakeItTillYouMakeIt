@@ -10,9 +10,10 @@ namespace ExtremeFakeItTillYouMakeIt
         private int previousScore = 0;
         private  List<int> Rolls = new List<int>();
 
-        public Frame(int frameNumber)
+        public Frame(int frameNumber, int previousScore)
         {
             this.frameNumber = frameNumber;
+            this.previousScore = previousScore;
         }
 
         private  int TotalScore

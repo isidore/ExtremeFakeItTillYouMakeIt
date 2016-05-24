@@ -10,7 +10,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public void Roll(params int[] rolls)
         {
-            Frame frame = new Frame(1);
+            Frame frame = new Frame(1, 0);
             frame.AddRoll(rolls[0]);
             frame.AddRoll(rolls[1]);
             frames.Add(frame);
