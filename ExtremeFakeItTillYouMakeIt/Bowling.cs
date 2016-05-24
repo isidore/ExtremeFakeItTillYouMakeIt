@@ -12,7 +12,15 @@ namespace ExtremeFakeItTillYouMakeIt
         {
             Frame frame = new Frame(1, 0);
             frame.AddRoll(rolls[0]);
-            frame.AddRoll(rolls[1]);
+            if (frame.IsStrike)
+            {
+                frame.AddRoll(rolls[3]);
+                frame.AddRoll(rolls[4]);
+            }
+            else
+            {
+                frame.AddRoll(rolls[1]);
+            }
             frames.Add(frame);
             //2) 10 [20] = 28
             frame = new Frame(2, 8);
@@ -21,6 +29,10 @@ namespace ExtremeFakeItTillYouMakeIt
             {
                 frame.AddRoll(rolls[3]);
                 frame.AddRoll(rolls[4]);
+            }
+            else
+            {
+                frame.AddRoll(rolls[1]);
             }
             frames.Add(frame);
         }
