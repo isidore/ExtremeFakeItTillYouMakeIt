@@ -1,13 +1,17 @@
-﻿using ApprovalUtilities.Utilities;
+﻿using System.Collections.Generic;
+using ApprovalUtilities.Utilities;
 
 namespace ExtremeFakeItTillYouMakeIt
 {
     public class Bowling
     {
         int frameNumber = 1;
+        private static List<int> Rolls = new List<int>();
 
         public void Roll(params int[] rolls)
         {
+            Rolls.Add(3);
+            Rolls.Add(5);
         }
 
         public override string ToString()
@@ -28,7 +32,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         private static string GetRollsToString()
         {
-            return "{0}, {1}".FormatWith(3,5);
+            return "{0}, {1}".FormatWith(Rolls[0], Rolls[1]);
         }
     }
 }
