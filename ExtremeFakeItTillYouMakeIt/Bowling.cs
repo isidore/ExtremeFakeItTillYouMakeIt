@@ -33,7 +33,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         private static int TotalScore
         {
-            get { return 8 + 0; }
+            get { return FrameScore + 0; }
         }
 
         public static int FrameScore
