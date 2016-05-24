@@ -40,7 +40,7 @@ namespace ExtremeFakeItTillYouMakeIt
         {
             if (frameNumber == 10)
             {
-                return "{0}, {1}, {2}".FormatWith(Rolls[0], Rolls[1], Rolls[2]);
+                return Rolls.JoinStringsWith(n => "" + n, ", ");
   
             }
             if (IsStrike)
