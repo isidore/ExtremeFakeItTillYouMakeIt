@@ -32,7 +32,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public static int FrameScore
         {
-            get { return 8; }
+            get { return 3 +5 ; }
         }
 
         private static string GetRollsToString()
