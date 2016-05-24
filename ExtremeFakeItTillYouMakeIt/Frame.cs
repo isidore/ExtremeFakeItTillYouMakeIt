@@ -31,25 +31,24 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public  override string ToString()
         {
-            var frame1ToString = @"
-{0}) {1} [{2}] = {3}".TrimStart();
+            var frame1ToString = "{0}) {1} [{2}] = {3}";
             return frame1ToString.FormatWith(frameNumber, GetRollsToString(), FrameScore, TotalScore);
         }
 
         private  string GetRollsToString()
         {
-            var count = 2;
+            var rollsToDisplay = 2;
 
             if (frameNumber == 10)
             {
-                count = Rolls.Count;
+                rollsToDisplay = Rolls.Count;
             }
             else if (IsStrike)
             {
-                count = 1;
+                rollsToDisplay = 1;
 
             }
-            return Rolls.Take(count).JoinStringsWith(n => "" + n, ", ");
+            return Rolls.Take(rollsToDisplay).JoinStringsWith(n => "" + n, ", ");
   
         }
 
