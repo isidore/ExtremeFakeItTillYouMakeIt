@@ -12,8 +12,7 @@ namespace ExtremeFakeItTillYouMakeIt
         {
             var previousScore = 0;
             var rollIndex = 0;
-            // 3) 3, 7 [18] = 46
-            for (int frameNumber = 1; frameNumber <= 3; frameNumber++)
+            for (int frameNumber = 1; frameNumber <= 10; frameNumber++)
             {
 
 
@@ -40,14 +39,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public override string ToString()
         {
-            var expected = frames.JoinStringsWith(f => "" + f, "\r\n") +"\r\n"+ @"
-4) 8, 1 [9] = 55
-5) 10 [26] = 81
-6) 10 [18] = 99
-7) 6, 2 [8] = 107
-8) 5, 4 [9] = 116
-9) 7, 3 [20] = 136
-10) 10, 6, 3 [19] = 155".TrimStart();
+            var expected = frames.JoinStringsWith(f => "" + f, "\r\n");
             return expected;
         }
     }
