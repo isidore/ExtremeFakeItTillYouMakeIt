@@ -16,8 +16,8 @@ namespace ExtremeFakeItTillYouMakeIt
             frame.AddRoll(rolls[rollIndex++]);
             if (frame.IsStrike)
             {
-                frame.AddRoll(rolls[3]);
-                frame.AddRoll(rolls[4]);
+                frame.AddRoll(rolls[rollIndex]);
+                frame.AddRoll(rolls[rollIndex + 1]);
             }
             else
             {
@@ -26,15 +26,15 @@ namespace ExtremeFakeItTillYouMakeIt
             frames.Add(frame);
              previousScore = frame.TotalScore;
             frame = new Frame(2, previousScore);
-            frame.AddRoll(rolls[2]);
+            frame.AddRoll(rolls[rollIndex++]);
             if (frame.IsStrike)
             {
-                frame.AddRoll(rolls[3]);
-                frame.AddRoll(rolls[4]);
+                frame.AddRoll(rolls[rollIndex]);
+                frame.AddRoll(rolls[rollIndex+1]);
             }
             else
             {
-                frame.AddRoll(rolls[1]);
+                frame.AddRoll(rolls[rollIndex++]);
             }
             frames.Add(frame);
         }
