@@ -4,16 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ExtremeFakeItTillYouMakeIt
 {
     [TestClass]
-    public class UnitTest1
+    public class BowlingTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestHappyPath()
         {
-            // create a bowling game
             var game = new Bowling();
-            // roll some balls 3,5,10,3,7,8,1,10,10,6,2,5,4,7,3,10,6,3
             game.Roll(3, 5, 10, 3, 7, 8, 1, 10, 10, 6, 2, 5, 4, 7, 3, 10, 6, 3);
-            // verify the scoresheet
             var expected = @"
 1) 3, 5 [8] = 8
 2) 10 [20] = 28
