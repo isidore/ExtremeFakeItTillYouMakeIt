@@ -38,6 +38,8 @@ namespace ExtremeFakeItTillYouMakeIt
 
         private  string GetRollsToString()
         {
+            var count = 2;
+
             if (frameNumber == 10)
             {
                 return Rolls.JoinStringsWith(n => "" + n, ", ");
@@ -48,7 +50,7 @@ namespace ExtremeFakeItTillYouMakeIt
                 return "{0}".FormatWith(Rolls[0]);
                 
             }
-             return Rolls.Take(2).JoinStringsWith(n => "" + n, ", ");
+            return Rolls.Take(count).JoinStringsWith(n => "" + n, ", ");
   
         }
 
