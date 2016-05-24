@@ -1,4 +1,6 @@
-﻿namespace ExtremeFakeItTillYouMakeIt
+﻿using ApprovalUtilities.Utilities;
+
+namespace ExtremeFakeItTillYouMakeIt
 {
     public class Bowling
     {
@@ -19,7 +21,7 @@
 8) 5, 4 [9] = 116
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();   
-            return expected;
+            return expected.FormatWith();
         }
     }
 }
