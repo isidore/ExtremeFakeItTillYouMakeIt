@@ -11,8 +11,9 @@ namespace ExtremeFakeItTillYouMakeIt
         public void Roll(params int[] rolls)
         {
             var previousScore = 0;
+            var rollIndex = 0;
             Frame frame = new Frame(1, 0);
-            frame.AddRoll(rolls[0]);
+            frame.AddRoll(rolls[rollIndex++]);
             if (frame.IsStrike)
             {
                 frame.AddRoll(rolls[3]);
@@ -20,10 +21,9 @@ namespace ExtremeFakeItTillYouMakeIt
             }
             else
             {
-                frame.AddRoll(rolls[1]);
+                frame.AddRoll(rolls[rollIndex++]);
             }
             frames.Add(frame);
-            //2) 10 [20] = 28
              previousScore = frame.TotalScore;
             frame = new Frame(2, previousScore);
             frame.AddRoll(rolls[2]);
