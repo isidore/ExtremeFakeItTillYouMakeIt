@@ -10,14 +10,14 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public void Roll(params int[] rolls)
         {
-            Rolls.Add(3);
-            Rolls.Add(5);
+            Rolls.Add(rolls[0]);
+            Rolls.Add(rolls[1]);
         }
 
         public override string ToString()
         {
             var expected = @"
-{0}) {1} [8] = 8
+{0}) {1} [{2}] = 8
 2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
@@ -27,7 +27,7 @@ namespace ExtremeFakeItTillYouMakeIt
 8) 5, 4 [9] = 116
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();
-            return expected.FormatWith(frameNumber, GetRollsToString());
+            return expected.FormatWith(frameNumber, GetRollsToString(), 8);
         }
 
         private static string GetRollsToString()
