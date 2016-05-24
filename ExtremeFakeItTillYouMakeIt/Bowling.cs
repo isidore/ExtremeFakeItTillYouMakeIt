@@ -28,14 +28,14 @@ namespace ExtremeFakeItTillYouMakeIt
 8) 5, 4 [9] = 116
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();
-            return expected.FormatWith(frameNumber, GetRollsToString(), FrameScore, TotalScore);
+            return expected;
         }
 
-        private static string Frame1ToString()
+        private  string Frame1ToString()
         {
             var frame1ToString = @"
 {0}) {1} [{2}] = {3}".TrimStart();
-            return frame1ToString;
+            return frame1ToString.FormatWith(frameNumber, GetRollsToString(), FrameScore, TotalScore);
         }
 
         private  int TotalScore
