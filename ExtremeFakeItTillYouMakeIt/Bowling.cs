@@ -11,7 +11,7 @@ namespace ExtremeFakeItTillYouMakeIt
         public override string ToString()
         {
             var expected = @"
-1) 3, 5 [8] = 8
+{0}) 3, 5 [8] = 8
 2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
@@ -21,7 +21,7 @@ namespace ExtremeFakeItTillYouMakeIt
 8) 5, 4 [9] = 116
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();   
-            return expected.FormatWith();
+            return expected.FormatWith(1);
         }
     }
 }
