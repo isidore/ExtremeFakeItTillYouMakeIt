@@ -19,7 +19,7 @@ namespace ExtremeFakeItTillYouMakeIt
         public override string ToString()
         {
             var expected = @"
-{0}) {1} [{2}] = {3}
+{0}) {1} [{2}] = {3}".TrimStart() +"\r\n"+ @"
 2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
