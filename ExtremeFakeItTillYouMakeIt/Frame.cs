@@ -38,8 +38,15 @@ namespace ExtremeFakeItTillYouMakeIt
 
         private  string GetRollsToString()
         {
+            if (IsStrike)
+            {
+                return "{0}".FormatWith(Rolls[0]);
+                
+            }
             return "{0}, {1}".FormatWith(Rolls[0], Rolls[1]);
         }
+
+        public bool IsStrike { get { return Rolls.First() == 10; }}
 
         public void AddRoll(int roll)
         {

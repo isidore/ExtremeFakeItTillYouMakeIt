@@ -14,12 +14,17 @@ namespace ExtremeFakeItTillYouMakeIt
             frame.AddRoll(rolls[0]);
             frame.AddRoll(rolls[1]);
             frames.Add(frame);
+            //2) 10 [20] = 28
+            frame = new Frame(2, 8);
+            frame.AddRoll(rolls[2]);
+            frame.AddRoll(rolls[3]);
+            frame.AddRoll(rolls[4]);
+            frames.Add(frame);
         }
 
         public override string ToString()
         {
             var expected = frames.JoinStringsWith(f => "" + f, "\r\n") +"\r\n"+ @"
-2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
 5) 10 [26] = 81
