@@ -38,6 +38,11 @@ namespace ExtremeFakeItTillYouMakeIt
 
         private  string GetRollsToString()
         {
+            if (frameNumber == 10)
+            {
+                return "{0}, {1}, {2}".FormatWith(Rolls[0], Rolls[1], Rolls[2]);
+  
+            }
             if (IsStrike)
             {
                 return "{0}".FormatWith(Rolls[0]);
