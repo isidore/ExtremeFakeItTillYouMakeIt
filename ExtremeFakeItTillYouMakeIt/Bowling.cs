@@ -6,19 +6,17 @@ namespace ExtremeFakeItTillYouMakeIt
 {
     public class Bowling
     {
-        private int frameNumber = 1;
-        int previousScore = 0;
-        private  List<int> Rolls = new List<int>();
+        private readonly Frame frame = new Frame();
 
         public void Roll(params int[] rolls)
         {
-            Rolls.Add(rolls[0]);
-            Rolls.Add(rolls[1]);
+            frame.AddRoll(rolls[0]);
+            frame.AddRoll(rolls[1]);
         }
 
         public override string ToString()
         {
-            var expected = Frame1ToString() +"\r\n"+ @"
+            var expected = frame +"\r\n"+ @"
 2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
@@ -29,31 +27,6 @@ namespace ExtremeFakeItTillYouMakeIt
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();
             return expected;
-        }
-
-        private  string Frame1ToString()
-        {
-            var frame1ToString = @"
-{0}) {1} [{2}] = {3}".TrimStart();
-            return frame1ToString.FormatWith(frameNumber, GetRollsToString(), FrameScore, TotalScore);
-        }
-
-        private  int TotalScore
-        {
-            get
-            {
-                return FrameScore + previousScore;
-            }
-        }
-
-        public  int FrameScore
-        {
-            get { return Rolls.Sum(); }
-        }
-
-        private  string GetRollsToString()
-        {
-            return "{0}, {1}".FormatWith(Rolls[0], Rolls[1]);
         }
     }
 }
