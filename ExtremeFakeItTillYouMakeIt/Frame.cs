@@ -42,13 +42,12 @@ namespace ExtremeFakeItTillYouMakeIt
 
             if (frameNumber == 10)
             {
-                return Rolls.JoinStringsWith(n => "" + n, ", ");
-  
+                count = Rolls.Count;
             }
-            if (IsStrike)
+            else if (IsStrike)
             {
-                return "{0}".FormatWith(Rolls[0]);
-                
+                count = 1;
+
             }
             return Rolls.Take(count).JoinStringsWith(n => "" + n, ", ");
   
