@@ -7,7 +7,7 @@ namespace ExtremeFakeItTillYouMakeIt
     public class Frame
     {
         private int frameNumber ;
-        private int previousScore = 0;
+        private int previousScore ;
         private  List<int> Rolls = new List<int>();
 
         public Frame(int frameNumber, int previousScore)
