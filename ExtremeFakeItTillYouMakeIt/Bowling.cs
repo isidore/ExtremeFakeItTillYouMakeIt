@@ -18,9 +18,7 @@ namespace ExtremeFakeItTillYouMakeIt
 
         public override string ToString()
         {
-            var frame1ToString = @"
-{0}) {1} [{2}] = {3}".TrimStart();
-            var expected = frame1ToString +"\r\n"+ @"
+            var expected = Frame1ToString() +"\r\n"+ @"
 2) 10 [20] = 28
 3) 3, 7 [18] = 46
 4) 8, 1 [9] = 55
@@ -31,6 +29,13 @@ namespace ExtremeFakeItTillYouMakeIt
 9) 7, 3 [20] = 136
 10) 10, 6, 3 [19] = 155".TrimStart();
             return expected.FormatWith(frameNumber, GetRollsToString(), FrameScore, TotalScore);
+        }
+
+        private static string Frame1ToString()
+        {
+            var frame1ToString = @"
+{0}) {1} [{2}] = {3}".TrimStart();
+            return frame1ToString;
         }
 
         private  int TotalScore
